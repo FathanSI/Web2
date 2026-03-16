@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fathan's Calcu!</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#dff5e1,#b8e6c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.kalkulator{
+    background: white;
+    padding: 25px;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 15px;
+    color: #4a8f63;
+}
+
+input{
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: #f1fff3;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    margin: 5px;
+    background: #e7f8ea;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover{
+    background: #bde7c7;
+    transform: scale(1.05);
+}
+
+.operator{
+    background: #7ed9a3;
+    color: white;
+}
+
+.operator:hover{
+    background: #5cc788;
+}
+
+.equals{
+    background: #4caf78;
+    color: white;
+}
+
+.equals:hover{
+    background: #3e9d67;
+}
+
+.clear{
+    background: #ff9e9e;
+    color: white;
+}
+
+.clear:hover{
+    background: #ff7c7c;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="kalkulator">
+
+<h2>Fathan's Calcu 🌿</h2>
+
+<input type="text" id="layar" readonly>
+
+<div>
+
+<button onclick="tambahAngka('1')">1</button>
+<button onclick="tambahAngka('2')">2</button>
+<button onclick="tambahAngka('3')">3</button>
+<button class="operator" onclick="tambahAngka('+')">+</button>
+
+<br>
+
+<button onclick="tambahAngka('4')">4</button>
+<button onclick="tambahAngka('5')">5</button>
+<button onclick="tambahAngka('6')">6</button>
+<button class="operator" onclick="tambahAngka('-')">-</button>
+
+<br>
+
+<button onclick="tambahAngka('7')">7</button>
+<button onclick="tambahAngka('8')">8</button>
+<button onclick="tambahAngka('9')">9</button>
+<button class="operator" onclick="tambahAngka('*')">*</button>
+
+<br>
+
+<button class="clear" onclick="hapus()">C</button>
+<button onclick="tambahAngka('0')">0</button>
+<button class="equals" onclick="hitung()">=</button>
+<button class="operator" onclick="tambahAngka('/')">/</button>
+
+</div>
+
+</div>
+
+<script>
+
+function tambahAngka(angka){
+document.getElementById("layar").value += angka;
+}
+
+function hapus(){
+document.getElementById("layar").value = "";
+}
+
+function hitung(){
+let hasil = eval(document.getElementById("layar").value);
+document.getElementById("layar").value = hasil;
+}
+
+</script>
+
+</body>
+</html>
